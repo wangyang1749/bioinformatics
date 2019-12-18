@@ -11,8 +11,9 @@ def linkGene(input_path,output_path):
     
 
     f = open("{0}/{1}.fasta".format(output_path,"new_seq"),"w")
+    # 遍历该目录下的每一个文件夹
     for file_name in os.listdir(input_path):
-
+        # 使用biopython读取genbank文件的完整序列
         records = SeqIO.read("{0}/{1}".format(input_path,file_name),"genbank")
         #从Genbank获取完整序列
         complete_seq = str(records.seq)
@@ -21,11 +22,13 @@ def linkGene(input_path,output_path):
         for feature in  records.features:
             if feature.type == "CDS":
                 # print(feature.qualifiers.get("gene"))
+                # 获取基因的名称
                 gene_name = feature.qualifiers.get("gene")[0]
                 # print(type(feature.location.parts))
                 gene_seq=""
                 for gene in  feature.location.parts:
                     # print(complete_seq[gene.start:gene.end])
+                    # 获取对应的基因序列
                     gene_seq = gene_seq + complete_seq[gene.start:gene.end]
                 gene_dict[gene_name]=gene_seq
 
@@ -45,4 +48,4 @@ def linkGene(input_path,output_path):
         print("*******写入完成*******")
 
 if __name__ == "__main__":
-    linkGene("temp/result","temp/789")
+    linkGene("temp/source","temp/result")
