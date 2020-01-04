@@ -11,9 +11,35 @@ print(record.annotations["source"])
 print(len(record.features))
 # print(record.features)
 # print(record.features)
-for ele in record.features:
-    if ele.type == "tRNA":
-        print(ele.qualifiers.get("gene"))
-        # for ele1 in ele.location.parts:
-        #     print(ele1.start,ele1.end)
+complete_seq = str(record.seq)
+# for ele in record.features:
+#     if ele.type == "CDS":
+#         # print("> "+ele.qualifiers.get("gene")[0])
+#         for gene in ele.location.parts:
+#             # print(gene.start,gene.end)
+#             # 查看前三个基因
+#             # print(ele.qualifiers.get("gene")[0]+" : "+complete_seq[gene.start:gene.start+3])
+#             print(ele.qualifiers.get("gene")[0]+" : "+complete_seq[gene.end-3:gene.end])
 
+
+# for ele in record.features:
+#     if ele.type == "rRNA":
+#         # print("> "+ele.qualifiers.get("gene")[0])
+#         for gene in ele.location.parts:
+#             # print(gene.start,gene.end)
+#             # 查看前三个基因
+#             # print(ele.qualifiers.get("gene")[0]+" : "+complete_seq[gene.start:gene.start+3])
+#             # print(len(complete_seq[gene.start:gene.end]))
+#             rrna_seq = complete_seq[gene.start:gene.end].strip()
+#             print((rrna_seq.count("A")+rrna_seq.count("T"))/len(rrna_seq))
+#             print("total count:"+str(len(rrna_seq)))
+#             # print()
+
+for ele in record.features:
+    if ele.type == "D-loop":
+        # print("> "+ele.qualifiers.get("gene")[0])
+        for gene in ele.location.parts:
+            control_seq = complete_seq[gene.start:gene.end].strip()
+            print((control_seq.count("A")+control_seq.count("T"))/len(control_seq))
+            print("total count:"+str(len(control_seq)))
+       

@@ -1,0 +1,137 @@
+IQ-TREE multicore version 1.6.12 for Linux 64-bit built Aug 15 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    wy-Lenovo-V310-14IKB (AVX2, FMA3, 7 GB RAM)
+Command: iqtree -s example.phy -m TIM2+I+G -alrt 1000 -bb 1000
+Seed:    976486 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Mon Dec 30 18:30:38 2019
+Kernel:  AVX+FMA - 1 threads (4 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 4 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading alignment file example.phy ... Phylip format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 17 sequences with 1998 columns, 1152 distinct patterns
+1009 parsimony-informative, 303 singleton sites, 686 constant sites
+           Gap/Ambiguity  Composition  p-value
+   1  LngfishAu    0.15%    passed      6.20%
+   2  LngfishSA    0.00%    failed      0.62%
+   3  LngfishAf    0.05%    failed      1.60%
+   4  Frog         0.05%    passed     58.01%
+   5  Turtle       0.15%    passed     44.25%
+   6  Sphenodon    0.10%    passed     59.78%
+   7  Lizard       0.90%    passed     38.67%
+   8  Crocodile    0.35%    failed      2.51%
+   9  Bird         0.00%    failed      0.00%
+  10  Human        0.00%    failed      0.85%
+  11  Seal         0.00%    passed     68.93%
+  12  Cow          0.00%    passed     59.11%
+  13  Whale        0.00%    passed     97.83%
+  14  Mouse        0.05%    failed      1.43%
+  15  Rat          0.00%    passed     39.69%
+  16  Platypus     0.00%    failed      3.46%
+  17  Opossum      0.00%    failed      0.01%
+****  TOTAL        0.11%  8 sequences failed composition chi2 test (p-value<5%; df=3)
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.003 seconds
+Generating 1000 samples for ultrafast bootstrap (seed: 976486)...
+
+NOTE: 6 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Thoroughly optimizing +I+G parameters from 10 start values...
+Init pinv, alpha: 0.000, 1.000 / Estimate: 0.000, 0.484 / LogL: -21172.269
+Init pinv, alpha: 0.038, 1.000 / Estimate: 0.046, 0.538 / LogL: -21168.961
+Init pinv, alpha: 0.076, 1.000 / Estimate: 0.100, 0.618 / LogL: -21165.887
+Init pinv, alpha: 0.114, 1.000 / Estimate: 0.122, 0.660 / LogL: -21164.980
+Init pinv, alpha: 0.153, 1.000 / Estimate: 0.154, 0.731 / LogL: -21164.143
+Init pinv, alpha: 0.191, 1.000 / Estimate: 0.181, 0.802 / LogL: -21164.200
+Init pinv, alpha: 0.229, 1.000 / Estimate: 0.188, 0.823 / LogL: -21164.379
+Init pinv, alpha: 0.267, 1.000 / Estimate: 0.190, 0.827 / LogL: -21164.421
+Init pinv, alpha: 0.305, 1.000 / Estimate: 0.190, 0.827 / LogL: -21164.420
+Init pinv, alpha: 0.343, 1.000 / Estimate: 0.189, 0.824 / LogL: -21164.380
+Optimal pinv,alpha: 0.154, 0.731 / LogL: -21164.143
+
+Parameters optimization took 1.757 sec
+Computing ML distances based on estimated model parameters... 0.005 sec
+Computing BIONJ tree...
+0.000 seconds
+Log-likelihood of BIONJ tree: -21157.778
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.183 second
+Computing log-likelihood of 98 initial trees ... 0.665 seconds
+Current best score: -21157.778
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -21157.748
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 2: -21152.541
+Iteration 10 / LogL: -21153.086 / Time: 0h:0m:3s
+Iteration 20 / LogL: -21157.933 / Time: 0h:0m:4s
+Finish initializing candidate tree set (2)
+Current best tree score: -21152.541 / CPU time: 2.218
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -21152.798 / Time: 0h:0m:4s (0h:0m:11s left)
+Iteration 40 / LogL: -21152.562 / Time: 0h:0m:5s (0h:0m:8s left)
+Iteration 50 / LogL: -21157.877 / Time: 0h:0m:6s (0h:0m:6s left)
+Log-likelihood cutoff on original alignment: -21191.822
+Iteration 60 / LogL: -21152.551 / Time: 0h:0m:6s (0h:0m:4s left)
+Iteration 70 / LogL: -21152.772 / Time: 0h:0m:7s (0h:0m:3s left)
+Iteration 80 / LogL: -21153.187 / Time: 0h:0m:8s (0h:0m:2s left)
+Iteration 90 / LogL: -21152.603 / Time: 0h:0m:8s (0h:0m:1s left)
+Iteration 100 / LogL: -21152.733 / Time: 0h:0m:9s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -21191.822
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 1.000
+TREE SEARCH COMPLETED AFTER 103 ITERATIONS / Time: 0h:0m:9s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -21152.541
+Optimal log-likelihood: -21152.537
+Rate parameters:  A-C: 5.56119  A-G: 7.61922  A-T: 5.56119  C-G: 1.00000  C-T: 22.54301  G-T: 1.00000
+Base frequencies:  A: 0.355  C: 0.228  G: 0.192  T: 0.225
+Proportion of invariable sites: 0.156
+Gamma shape alpha: 0.733
+Parameters optimization took 1 rounds (0.018 sec)
+BEST SCORE FOUND : -21152.537
+
+Testing tree branches by SH-like aLRT with 1000 replicates...
+0.522 sec.
+Creating bootstrap support values...
+Split supports printed to NEXUS file example.phy.splits.nex
+Total tree length: 4.217
+
+Total number of iterations: 103
+CPU time used for tree search: 7.792 sec (0h:0m:7s)
+Wall-clock time used for tree search: 7.800 sec (0h:0m:7s)
+Total CPU time used: 10.198 sec (0h:0m:10s)
+Total wall-clock time used: 10.216 sec (0h:0m:10s)
+
+Computing bootstrap consensus tree...
+Reading input file example.phy.splits.nex...
+17 taxa and 56 splits.
+Consensus tree written to example.phy.contree
+Reading input trees file example.phy.contree
+Log-likelihood of consensus tree: -21152.538
+
+Analysis results written to: 
+  IQ-TREE report:                example.phy.iqtree
+  Maximum-likelihood tree:       example.phy.treefile
+  Likelihood distances:          example.phy.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          example.phy.splits.nex
+  Consensus tree:                example.phy.contree
+  Screen log file:               example.phy.log
+
+Date and Time: Mon Dec 30 18:30:49 2019

@@ -1,0 +1,121 @@
+IQ-TREE multicore version 1.6.12 for Linux 64-bit built Aug 15 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    wy-Lenovo-V310-14IKB (AVX2, FMA3, 7 GB RAM)
+Command: iqtree -s example.phy -spp example.nex
+Seed:    677793 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Mon Dec 30 18:39:48 2019
+Kernel:  AVX+FMA - 1 threads (4 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 4 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading partition model file example.nex ...
+Reading alignment file example.phy ... Phylip format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 17 sequences with 1998 columns, 1152 distinct patterns
+1009 parsimony-informative, 303 singleton sites, 686 constant sites
+           Gap/Ambiguity  Composition  p-value
+   1  LngfishAu    0.15%    passed      6.20%
+   2  LngfishSA    0.00%    failed      0.62%
+   3  LngfishAf    0.05%    failed      1.60%
+   4  Frog         0.05%    passed     58.01%
+   5  Turtle       0.15%    passed     44.25%
+   6  Sphenodon    0.10%    passed     59.78%
+   7  Lizard       0.90%    passed     38.67%
+   8  Crocodile    0.35%    failed      2.51%
+   9  Bird         0.00%    failed      0.00%
+  10  Human        0.00%    failed      0.85%
+  11  Seal         0.00%    passed     68.93%
+  12  Cow          0.00%    passed     59.11%
+  13  Whale        0.00%    passed     97.83%
+  14  Mouse        0.05%    failed      1.43%
+  15  Rat          0.00%    passed     39.69%
+  16  Platypus     0.00%    failed      3.46%
+  17  Opossum      0.00%    failed      0.01%
+****  TOTAL        0.11%  8 sequences failed composition chi2 test (p-value<5%; df=3)
+
+Loading 3 partitions...
+Subset	Type	Seqs	Sites	Infor	Invar	Model	Name
+1	DNA	17	666	343	227	HKY	part1
+2	DNA	17	333	153	112	GTR+G	part2
+3	DNA	17	999	513	347	GTR+G	part3
+Degree of missing data: 0.000
+Info: multi-threading strategy over partitions
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.002 seconds
+
+NOTE: 2 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -22602.639
+Current log-likelihood at step 1: -21802.095
+Current log-likelihood at step 2: -21789.718
+Current log-likelihood at step 3: -21789.140
+Current log-likelihood at step 4: -21789.114
+Partition-specific rates:  0.776 0.942 1.169
+Parameters optimization took 3 rounds (0.256 sec)
+
+Computing ML distances based on estimated model parameters... 0.008 sec
+Computing BIONJ tree...
+0.001 seconds
+Log-likelihood of BIONJ tree: -21787.849
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.249 second
+Computing log-likelihood of 97 initial trees ... 0.780 seconds
+Current best score: -21787.849
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -21784.413
+Current log-likelihood at step 1: -21784.369
+Parameters optimization took 0 rounds (0.026 sec)
+
+BETTER TREE FOUND at iteration 1: -21784.369
+Iteration 10 / LogL: -21784.371 / Time: 0h:0m:1s
+Iteration 20 / LogL: -21784.370 / Time: 0h:0m:2s
+Finish initializing candidate tree set (1)
+Current best tree score: -21784.369 / CPU time: 2.089
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -21784.468 / Time: 0h:0m:3s (0h:0m:7s left)
+Iteration 40 / LogL: -21784.371 / Time: 0h:0m:3s (0h:0m:6s left)
+Iteration 50 / LogL: -21784.385 / Time: 0h:0m:4s (0h:0m:4s left)
+Iteration 60 / LogL: -21784.395 / Time: 0h:0m:5s (0h:0m:3s left)
+Iteration 70 / LogL: -21784.375 / Time: 0h:0m:5s (0h:0m:2s left)
+Iteration 80 / LogL: -21784.448 / Time: 0h:0m:6s (0h:0m:1s left)
+Iteration 90 / LogL: -21784.386 / Time: 0h:0m:6s (0h:0m:0s left)
+Iteration 100 / LogL: -21784.385 / Time: 0h:0m:7s (0h:0m:0s left)
+TREE SEARCH COMPLETED AFTER 102 ITERATIONS / Time: 0h:0m:7s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+Initial log-likelihood: -21784.369
+Current log-likelihood at step 1: -21784.367
+Partition-specific rates:  0.772 0.944 1.171
+Parameters optimization took 0 rounds (0.021 sec)
+
+BEST SCORE FOUND : -21784.367
+Total tree length: 3.649
+
+Total number of iterations: 102
+CPU time used for tree search: 7.480 sec (0h:0m:7s)
+Wall-clock time used for tree search: 7.501 sec (0h:0m:7s)
+Total CPU time used: 7.806 sec (0h:0m:7s)
+Total wall-clock time used: 7.829 sec (0h:0m:7s)
+
+Analysis results written to: 
+  IQ-TREE report:                example.nex.iqtree
+  Maximum-likelihood tree:       example.nex.treefile
+  Likelihood distances:          example.nex.mldist
+  Screen log file:               example.nex.log
+
+Date and Time: Mon Dec 30 18:39:56 2019
